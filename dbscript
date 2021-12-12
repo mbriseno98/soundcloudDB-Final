@@ -1,0 +1,172 @@
+CREATE DATABASE soundcloudDB;
+use soundcloudDB;
+ CREATE TABLE artists(
+    id int NOT NULL AUTO_INCREMENT,
+    name varchar(40) NOT NULL,
+    PRIMARY KEY(id),
+    Unique Key(name)
+     );
+    
+CREATE TABLE albums(
+     id int NOT NULL AUTO_INCREMENT,
+     name varchar(40) NOT NULL,
+     artist int NOT NULL,
+     PRIMARY KEY(id),
+     FOREIGN KEY(artist) REFERENCES artists(id)
+     ON DELETE CASCADE
+     );
+     
+CREATE TABLE songs (
+    id int NOT NULL AUTO_INCREMENT,
+    name varchar(40) NOT NULL,
+    album int NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY (album) REFERENCES albums(id)
+    ON DELETE CASCADE
+    );
+    
+INSERT INTO artists(name) VALUES ('Bones');
+
+INSERT INTO artists(name) VALUES ('King Von');
+
+INSERT INTO artists(name) VALUES('Xavier Wulf');
+
+SELECT * FROM artists;
+INSERT INTO albums (name, artist) VALUES('Unrendered', 1);
+
+INSERT INTO albums (name, artist) VALUES('Welcome To O Block', 2);
+
+INSERT INTO albums (name, artist) VALUES('Project X', 3);
+
+INSERT INTO songs(name, album) VALUES ('Demon', 2);
+
+
+INSERT INTO songs(name, album) VALUES ('The Code', 2);
+
+
+INSERT INTO songs(name, album) VALUES ('Back Again', 2);
+
+
+INSERT INTO songs(name, album) VALUES ('All These N*****', 2);
+
+
+INSERT INTO songs(name, album) VALUES ('Mad At You', 2);
+
+INSERT INTO songs(name, album) VALUES('How it Go', 2);
+
+INSERT INTO songs(name, album) VALUES('GTA', 2);
+
+
+INSERT INTO songs(name, album) VALUES('Mine Too', 2);
+
+
+INSERT INTO songs(name, album) VALUES('Why He Told', 2);
+
+
+INSERT INTO songs(name, album) VALUES('Gleesh Place', 2);
+
+
+INSERT INTO songs(name, album) VALUES('Ride', 2);
+
+INSERT INTO songs(name, album) VALUES('Waynes Story', 2);
+
+INSERT INTO songs(name, album) VALUES('Akina Speed Star', 3);
+
+INSERT INTO songs(name, album) VALUES('Wulf Takahashi', 3);
+
+
+INSERT INTO songs(name, album) VALUES('1st Summer Night', 3);
+
+
+INSERT INTO songs(name, album) VALUES('Wulf of Akina', 3);
+
+
+INSERT INTO songs(name, album) VALUES('The Cost', 3);
+
+
+INSERT INTO songs(name, album) VALUES('Pedal to the Metal', 3);
+
+SELECT * FROM SONGS;
+
+INSERT INTO songs(name, album) VALUES('Date Night', 3);
+
+INSERT INTO songs(name, album) VALUES('Importing', 1);
+
+
+INSERT INTO songs(name, album) VALUES('SystemPreferences', 1);
+
+
+INSERT INTO songs(name, album) VALUES('SunnyDay', 1);
+
+
+INSERT INTO songs(name, album) VALUES('LifeRuiner', 1);
+
+
+INSERT INTO songs(name, album) VALUES('MyNephewHasAWhitePickUpTruck', 1);
+
+
+INSERT INTO songs(name, album) VALUES('WhateverHelpsYouSleep', 1);
+
+
+INSERT INTO songs(name, album) VALUES('YouKnowIWantYou', 1);
+
+
+INSERT INTO songs(name, album) VALUES('MinorSetback', 1);
+
+INSERT INTO songs(name, album) VALUES('ContinueWithoutSaving?',1);
+
+
+INSERT INTO songs(name, album) VALUES('CtrlAltDelete',1);
+
+
+INSERT INTO songs(name, album) VALUES('MissingProjectFiles',1);
+
+
+INSERT INTO songs(name, album) VALUES('TakingOutTheTrash',1);
+
+
+INSERT INTO songs(name, album) VALUES('CaseSensitive',1);
+
+
+INSERT INTO songs(name, album) VALUES('BoyOhBoy',1);
+
+
+INSERT INTO songs(name, album) VALUES('TheGrandestNothing',1);
+
+
+INSERT INTO songs(name, album) VALUES('Exporting',1);
+
+
+INSERT INTO artists(name) VALUES('Lil Peep');
+
+
+INSERT INTO artists(name) VALUES('Maxo Kream');
+
+INSERT INTO artists(name) VALUES('Su6urban');
+
+INSERT INTO artists(name) VALUES('Juice Wrld');
+
+INSERT INTO artists(name) VALUES('XXXTentacion');
+
+ALTER TABLE artists ADD age CHAR (2);
+
+ALTER TABLE artists
+	ADD social_media VARCHAR (15),
+	ADD label VARCHAR(20);
+
+UPDATE artists SET age =17, social_media = "@TeamSESH", label = "SESH" WHERE id = 1;
+
+UPDATE artists SET age = 26, social_media = "@KingVonFrmdaWic" , label = "EMPIRE/OTF" WHERE id = 2;
+
+UPDATE artists SET social_media ="@XavierWulf" , age = 29, label = "HOLLOWSQUAD" WHERE id = 3;
+
+UPDATE artists SET social_media ="@Lilpeep" , age = 21, label = "GBC/FAE" WHERE id = 4;
+
+UPDATE artists SET social_media ="@MAXOKREAM" , age = 31, label = "Roc Nation" WHERE id = 5;
+
+UPDATE artists SET social_media ="@su6urban" , age = 25, label = "None" WHERE id = 6;
+
+UPDATE artists SET social_media ="@JuiceWorlddd" , age = 25, label = "Interscope" WHERE id = 7;
+
+UPDATE artists SET social_media ="none" , age = 19, label = "EMPIRE" WHERE id = 8;
+
